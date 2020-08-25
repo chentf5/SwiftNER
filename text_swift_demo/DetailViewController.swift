@@ -173,7 +173,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         self.view.addSubview(cardView)
         
         let describeText = UILabel(frame: CGRect(x: 10 , y: 5, width: 360, height: 120))
-        describeText.text = "这是小白的零基础JavaScript全栈教程。JavaScript是世界上最流行的脚本语言，因为你在电脑、手机、平板上浏览的所有的网页，以及无数基于HTML5的手机App，交互逻辑都是由JavaScript驱动的。简单地说，JavaScript是一种运行在浏览器中的解释型的编程语言。那么问题来了，为什么我们要学JavaScript？尤其是当你已经掌握了某些其他编程语言如Java、C++的情"
+        describeText.text = "在中国西部偏远山区山高谷深的地方，溜索曾是民众的重要交通工具。近年来，四川在阿坝、甘孜、凉山、广元、绵阳等地山区相继建设的“溜索改桥”项目，让这里的“蜀道难”成为历史"
         describeText.backgroundColor = UIColor.white
         describeText.textColor = UIColor.lightGray
         describeText.font = UIFont.systemFont(ofSize: 12)
@@ -312,11 +312,12 @@ class DetailViewController: UIViewController, UITextViewDelegate {
                         print("code = \(jsonValue)")
                         let  datajosn:NSDictionary  = response.value as! NSDictionary
 
-                        let status = datajosn["status"]as!String
+                        let status = datajosn["status"] as!String
                         //print(finaldata["status"])
                        var final = ""
-                        var LOCarray =  datajosn["LOC"]
-                        final = final.appendingFormat("LOC : %@ \n" ,datajosn["LOC"] as! String)
+                        var LOCarray =  datajosn["LOC"] as! Array<String>
+                        
+                        final = final.appendingFormat("LOC : %@ \n" ,datajosn["LOC"] as! Array<String>)
                         //final = final.appendingFormat("ORG : %@ \n", finaldata["ORG"])
                         //final = final.appendingFormat("ORG : %@ \n", finaldata["PER"])
                         
